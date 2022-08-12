@@ -6,11 +6,11 @@ import com.idat.webserv.model.Profesor;
 
 public interface ProfesorService {
 
-	public void guardarProfesor(Profesor profesor);
-	public void editarProfesor(Profesor profesor);
+	public void guardar(Profesor profesor);
+	public void editar(Profesor profesor);
 	
-	public void eliminarProfesor(Integer id);
+	public void eliminar(Integer id);
 	
-	public List<Profesor> listarProfesor();
-	public Profesor obtenerProfesorId(Integer id);
+	public List<Profesor> listar();
+	public Profesor obtenerId(Integer id);
 }

@@ -13,39 +13,29 @@ public class ProfesorServiceImpl implements ProfesorService
 	public ProfesorRepository rep;
 
 	@Override
-	public void guardarProfesor(Profesor profesor) {
-		Profesor p = new Profesor();
-		p.setIdProfesor(profesor.getIdProfesor());
-		p.setNombre(profesor.getNombre());
-		p.setApellido(profesor.getApellido());
-		p.setFechaContrato(profesor.getFechaContrato());
-		p.setEspecialidad(profesor.setFechaContrato(p));
-		rep.save(p);
-		
+	public void guardar(Profesor profesor) {
+		rep.save(profesor);
+	
 	}
 
 	@Override
-	public void editarProfesor(Profesor profesor) {
-		// TODO Auto-generated method stub
-		
+	public void editar(Profesor profesor) {
+		rep.saveAndFlush(profesor);
 	}
 
 	@Override
-	public void eliminarProfesor(Integer id) {
+	public void eliminar(Integer id) {
 		rep.deleteById(id);
-		
 	}
 
 	@Override
-	public List<Profesor> listarProfesor() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Profesor> listar() {
+		return rep.findAll();
 	}
 
 	@Override
-	public Profesor obtenerProfesorId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Profesor obtenerId(Integer id) {
+		return rep.findById(id).orElse(null);
 	}
 	
 }
