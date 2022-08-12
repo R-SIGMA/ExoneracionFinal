@@ -3,10 +3,12 @@ package com.idat.webserv.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.idat.webserv.model.Profesor;
 import com.idat.webserv.repository.ProfesorRepository;
 
+@Service
 public class ProfesorServiceImpl implements ProfesorService
 {
 	@Autowired
@@ -15,7 +17,6 @@ public class ProfesorServiceImpl implements ProfesorService
 	@Override
 	public void guardar(Profesor profesor) {
 		rep.save(profesor);
-	
 	}
 
 	@Override
